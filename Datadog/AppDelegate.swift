@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Datadog
-//
-//  Created by junpei ono on 2019/10/12.
-//  Copyright © 2019 com.swiswiswift.datadog. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
