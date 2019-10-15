@@ -1,74 +1,51 @@
 import SwiftUI
 
-
-struct Menu: Identifiable {
-    enum MenuType: String {
-        case myAccount = "My Account"
-        case setting = "Setting"
-        case favorite = "Favorite"
-        case faq = "FAQ"
-        case signOut = "SignOut"
-
-        var title: String { self.rawValue }
-
-        var imageName: String {
-            switch self {
-            case .myAccount: return "person.crop.circle"
-            case .setting: return "wrench"
-            case .favorite: return "star.circle"
-            case .faq: return "questionmark.circle"
-            case .signOut: return "arrow.turn.up.left"
-            }
-        }
-    }
-
-    var id = UUID()
-    var type: MenuType
-}
-
-
-struct MenuRow: View {
-    var image = ""
-    var text = ""
-    var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Image(systemName: image)
-                    .imageScale(.large)
-                    .frame(width: 32, height: 32)
-                Text(text)
-                    .font(.headline)
-                Spacer()
-            }
-        }
-    }
-}
-
-
 struct MenuView: View {
-    @EnvironmentObject var bookStore: BookStore
-
-    var menu = [Menu(type: .myAccount),
-        Menu(type: .setting),
-        Menu(type: .favorite),
-        Menu(type: .faq),
-        Menu(type: .signOut),]
-
+    @EnvironmentObject var router: EnviromentRouter
     @Binding var show: Bool
 
     var body: some View {
         HStack {
             VStack(alignment: .center) {
-                VStack(alignment: .leading) {
-                    ForEach(menu) { item in
-                        MenuRow(image: item.type.imageName, text: item.type.title)
-                    }
-                }
-                
                 Button (action: {
-                    self.bookStore.isLogin = false
+                    self.router.isLogin = false
                 }) {
-                    Image ("snorlax")
+                    Text("Events")
+                        .imageScale (.large)
+                }
+
+                Button (action: {
+                    self.router.isLogin = false
+                }) {
+                    Text("Monitors")
+                        .imageScale (.large)
+                }
+
+                Button (action: {
+                    self.router.isLogin = false
+                }) {
+                    Text("Infrastructure")
+                        .imageScale (.large)
+                }
+
+                Button (action: {
+                    self.router.isLogin = false
+                }) {
+                    Text("Metrics Exploer")
+                        .imageScale (.large)
+                }
+
+                Button (action: {
+                    self.router.isLogin = false
+                }) {
+                    Text("Metrics Exploer")
+                        .imageScale (.large)
+                }
+
+                Button (action: {
+                    self.router.isLogin = false
+                }) {
+                    Text("Logout")
                         .imageScale (.large)
                 }
                 
@@ -92,20 +69,20 @@ struct MenuView: View {
 }
 
 struct ContentView: View {
-    @EnvironmentObject var bookStore: BookStore
+    @EnvironmentObject var router: EnviromentRouter
     @State var show = false
 
     var body: some View {
         // TODO: Switch でできないか調べる、もっと綺麗に
         ZStack {
-            if bookStore.enumnum == .x1 {
+            if router.enumnum == .events {
                 NavigationView {
-                    FirstView()
+                    EventsView()
                         .navigationBarItems (trailing: shareButton)
                 }.background(Color.red)
                  .navigationBarTitle(Text("Users"))
-            } else if bookStore.enumnum == .x2 {
-                SecondView()
+            } else if router.enumnum == .monitors {
+                MonitersView()
             } else {
                 ThirdView()
             }
@@ -120,19 +97,6 @@ struct ContentView: View {
             Image (systemName: "square.and.arrow.up")
                 .imageScale (.large)
         }
-    }
-}
-
-
-struct FirstView: View {
-    var body: some View {
-        Text("first")
-    }
-}
-
-struct SecondView: View {
-    var body: some View {
-        Text("second")
     }
 }
 

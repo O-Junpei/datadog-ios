@@ -15,7 +15,10 @@
 		8D3A92AF2351A37A00185500 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D3A92AD2351A37A00185500 /* LaunchScreen.storyboard */; };
 		8D6BE1292355FF510074E3D7 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6BE1282355FF510074E3D7 /* RootView.swift */; };
 		8D6BE12D2356007C0074E3D7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6BE12C2356007C0074E3D7 /* LoginView.swift */; };
-		8DA1837423523DD70075A36D /* BookStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA1837323523DD70075A36D /* BookStore.swift */; };
+		8D6BE1322356249D0074E3D7 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6BE1312356249D0074E3D7 /* Category.swift */; };
+		8D6BE134235627980074E3D7 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6BE133235627980074E3D7 /* EventsView.swift */; };
+		8D6BE136235627E20074E3D7 /* MonitersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6BE135235627E20074E3D7 /* MonitersView.swift */; };
+		8DA1837423523DD70075A36D /* EnviromentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA1837323523DD70075A36D /* EnviromentRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +32,10 @@
 		8D3A92B02351A37A00185500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D6BE1282355FF510074E3D7 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		8D6BE12C2356007C0074E3D7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		8DA1837323523DD70075A36D /* BookStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStore.swift; sourceTree = "<group>"; };
+		8D6BE1312356249D0074E3D7 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		8D6BE133235627980074E3D7 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
+		8D6BE135235627E20074E3D7 /* MonitersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitersView.swift; sourceTree = "<group>"; };
+		8DA1837323523DD70075A36D /* EnviromentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviromentRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +70,8 @@
 			children = (
 				8D3A92A22351A37A00185500 /* AppDelegate.swift */,
 				8D3A92A42351A37A00185500 /* SceneDelegate.swift */,
-				8DA1837323523DD70075A36D /* BookStore.swift */,
+				8DA1837323523DD70075A36D /* EnviromentRouter.swift */,
+				8D6BE1312356249D0074E3D7 /* Category.swift */,
 				8D6BE1272355FF2D0074E3D7 /* View */,
 				8D3A92A82351A37A00185500 /* Assets.xcassets */,
 				8D3A92AD2351A37A00185500 /* LaunchScreen.storyboard */,
@@ -88,6 +95,8 @@
 				8D3A92A62351A37A00185500 /* ContentView.swift */,
 				8D6BE1282355FF510074E3D7 /* RootView.swift */,
 				8D6BE12C2356007C0074E3D7 /* LoginView.swift */,
+				8D6BE133235627980074E3D7 /* EventsView.swift */,
+				8D6BE135235627E20074E3D7 /* MonitersView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,12 +172,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D6BE136235627E20074E3D7 /* MonitersView.swift in Sources */,
 				8D6BE12D2356007C0074E3D7 /* LoginView.swift in Sources */,
 				8D3A92A32351A37A00185500 /* AppDelegate.swift in Sources */,
 				8D3A92A52351A37A00185500 /* SceneDelegate.swift in Sources */,
-				8DA1837423523DD70075A36D /* BookStore.swift in Sources */,
+				8D6BE134235627980074E3D7 /* EventsView.swift in Sources */,
+				8DA1837423523DD70075A36D /* EnviromentRouter.swift in Sources */,
 				8D3A92A72351A37A00185500 /* ContentView.swift in Sources */,
 				8D6BE1292355FF510074E3D7 /* RootView.swift in Sources */,
+				8D6BE1322356249D0074E3D7 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

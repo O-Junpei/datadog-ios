@@ -28,7 +28,7 @@ fileprivate struct InputTextField: View {
 
 struct LoginView: View {
 
-    @EnvironmentObject var bookStore: BookStore
+    @EnvironmentObject var router: EnviromentRouter
 
     @State private var username: String = ""
     @State private var password: String = ""
@@ -49,19 +49,13 @@ struct LoginView: View {
 
             InputTextField(stateBinding: $username, label: "UserName", placeholder: "user name", secureTextField: false)
 
-            Divider()
-
             InputTextField(stateBinding: $password, label: "Password", placeholder: "password", secureTextField: true)
 
             HStack {
                 Spacer()
                 Button(action: {
                     print("\(self.username), \(self.password)")
-
-
-                    self.bookStore.isLogin = true
-                    print(self.bookStore)
-
+                    self.router.isLogin = true
                 }) {
                     Text("Login")
                         .font(.headline)
