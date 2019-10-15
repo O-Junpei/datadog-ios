@@ -48,11 +48,11 @@ struct MenuView: View {
                     Text("Logout")
                         .imageScale (.large)
                 }
-                
+
                 Spacer()
             }
-                .padding(.top, 20)
-                .padding(30)
+//                .padding(.top, 20)
+//                .padding(30)
                 .frame(width: 200)
                 .background(Color.blue.opacity(0.4))
                 .cornerRadius(20)
@@ -61,10 +61,10 @@ struct MenuView: View {
                 .onTapGesture {
                     self.show.toggle()
             }
-            
+
             Spacer()
         }
-            .padding(.top)
+//            .padding(.top)
     }
 }
 
@@ -73,19 +73,14 @@ struct ContentView: View {
     @State var show = false
 
     var body: some View {
-        // TODO: Switch でできないか調べる、もっと綺麗に
         ZStack {
-            if router.enumnum == .events {
-                NavigationView {
+            NavigationView {
+                ZStack {
                     EventsView()
+                        .navigationBarTitle("Welcome")
                         .navigationBarItems (trailing: shareButton)
-                }.background(Color.red)
-                 .navigationBarTitle(Text("Users"))
-            } else if router.enumnum == .monitors {
-                MonitersView()
-            } else {
-                ThirdView()
-            }
+                }
+            }.background(Color.gray)
             MenuView(show: $show)
         }
     }
@@ -97,12 +92,6 @@ struct ContentView: View {
             Image (systemName: "square.and.arrow.up")
                 .imageScale (.large)
         }
-    }
-}
-
-struct ThirdView: View {
-    var body: some View {
-        Text("third")
     }
 }
 
