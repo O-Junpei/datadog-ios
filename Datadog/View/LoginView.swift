@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 
-struct InputTextField: View {
+fileprivate struct InputTextField: View {
 
     @Binding var stateBinding: String
     let label: String
@@ -24,22 +24,6 @@ struct InputTextField: View {
         }
     }
 }
-
-
-struct RootView: View {
-    @EnvironmentObject var bookStore: BookStore
-
-    var body: some View {
-        VStack {
-            if bookStore.isLogin {
-                ContentView()
-            } else {
-                LoginView()
-            }
-        }
-    }
-}
-
 
 
 struct LoginView: View {
@@ -73,9 +57,7 @@ struct LoginView: View {
                 Spacer()
                 Button(action: {
                     print("\(self.username), \(self.password)")
-                    self.bookStore.score = self.bookStore.score + 1
 
-                    print("score: \(self.bookStore.score)")
 
                     self.bookStore.isLogin = true
                     print(self.bookStore)
@@ -86,6 +68,7 @@ struct LoginView: View {
                         .foregroundColor(.white)
                 }
                 // .disabled(true)
+                // TODO: 両方の TextField が空の場合は
                 
                 Spacer()
             }
@@ -102,26 +85,8 @@ struct LoginView: View {
     }
 }
 
-
-struct ContentView: View {
-
-
-    @EnvironmentObject var bookStore: BookStore
-
-    var body: some View {
-        VStack(alignment: .leading) {
-            Spacer()
-
-            Text("ログイン成功！！！！！！")
-                .font(.headline)
-                .foregroundColor(.black)
-            Spacer()
-        }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LoginView()
     }
 }
