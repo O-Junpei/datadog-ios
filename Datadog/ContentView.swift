@@ -1,67 +1,122 @@
 import SwiftUI
+import Combine
 
-struct ActivityIndicator: UIViewRepresentable {
+struct InputTextField: View {
 
-    @Binding var isAnimating: Bool
-    let style: UIActivityIndicatorView.Style
-
-    func makeUIView(context: UIViewRepresentableContext<ActivityIndicator>) -> UIActivityIndicatorView {
-        return UIActivityIndicatorView(style: style)
-    }
-
-    func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<ActivityIndicator>) {
-        isAnimating ? uiView.startAnimating() : uiView.stopAnimating()
-    }
-}
-
-struct ContentView: View {
-    @EnvironmentObject var bookStore: BookStore
-
-    @State private var apiKey: String = ""
-    @State private var appKey: String = ""
-    @State private var isAnimating: Bool = false
+    @Binding var stateBinding: String
+    let label: String
+    let placeholder: String
+    let secureTextField: Bool
 
     var body: some View {
-        
-        ZStack {
-            NavigationView {
-                VStack {
-                    Image("datadog")
-                        . resizable ()
-                        . aspectRatio (contentMode: . fit)
-                        .frame(width: 200, height: 200)
-                    TextField("App Key", text: $appKey)
-                        .frame(width: 300, height: 60)
-                        .border(Color.gray, width: 1)
-                        .background(Color.white)
-                    TextField("API Key", text: $apiKey)
-                        .frame(width: 300, height: 60)
-                        .border(Color.gray, width: 1)
-                        .background(Color.white)
-//
-//                    NavigationLink (destination: DetailView ()) {
-//                        Text ("animal . name")
-//                            . font (. system (size: 30))
-//                    }
-                    Button(action: {
-                        self.bookStore.fetch(id: 3)
-                        self.isAnimating = !self.isAnimating
-                    }) {
-                        Text("Login")
-                            .frame(width: 100, height: 40)
-                            .border(Color.gray, width: 1)
-                    }
-                }
+        VStack(alignment: .leading) {
+            Text(label)
+                .font(.headline)
+                .foregroundColor(Color.white)
+
+            if secureTextField {
+                SecureField(placeholder, text: $stateBinding)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            } else {
+                TextField(placeholder, text: $stateBinding)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
             }
-            ActivityIndicator(isAnimating: .constant(isAnimating), style: .large)
-                .frame(width: 200, height: 200, alignment: .center)
         }
     }
 }
 
-struct DetailView: View {
+
+struct RootView: View {
+    @EnvironmentObject var bookStore: BookStore
+
     var body: some View {
-        Text("Hello")
+        VStack {
+            if bookStore.isLogin {
+                ContentView()
+            } else {
+                LoginView()
+            }
+        }
+    }
+}
+
+
+
+struct LoginView: View {
+
+    @EnvironmentObject var bookStore: BookStore
+
+    @State private var username: String = ""
+    @State private var password: String = ""
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Spacer()
+
+            HStack {
+                Spacer()
+                Image("datadog")
+                    .resizable()
+                    .frame(width: 140, height: 140)
+                    .aspectRatio(
+                        CGSize(width: 400, height: 400), contentMode: .fit)
+                Spacer()
+            }
+
+            InputTextField(stateBinding: $username, label: "UserName", placeholder: "user name", secureTextField: false)
+
+            Divider()
+
+            InputTextField(stateBinding: $password, label: "Password", placeholder: "password", secureTextField: true)
+
+            HStack {
+                Spacer()
+                Button(action: {
+                    print("\(self.username), \(self.password)")
+                    self.bookStore.score = self.bookStore.score + 1
+
+                    print("score: \(self.bookStore.score)")
+
+                    self.bookStore.isLogin = true
+                    print(self.bookStore)
+
+                }) {
+                    Text("Login")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                }
+                // .disabled(true)
+                
+                Spacer()
+            }
+                .padding(.vertical, 10)
+                .background(Color.red)
+                .padding(.horizontal, 40)
+
+
+            Spacer()
+        }
+            .padding(.horizontal)
+            .background(Image("sea"))
+            .edgesIgnoringSafeArea([.top, .bottom])
+    }
+}
+
+
+struct ContentView: View {
+
+
+    @EnvironmentObject var bookStore: BookStore
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Spacer()
+
+            Text("ログイン成功！！！！！！")
+                .font(.headline)
+                .foregroundColor(.black)
+            Spacer()
+        }
     }
 }
 
