@@ -1,10 +1,10 @@
 import SwiftUI
 
-struct EventsView: View {
+struct DashboardsView: View {
     var body: some View {
         VStack {
             Divider()
-            Text("EventsView")
+            Text("DashboardsView")
             Spacer()
         }
     }

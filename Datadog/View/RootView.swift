@@ -10,5 +10,6 @@ struct RootView: View {
                 LoginView()
             }
         }
+        .animation(Animation.easeIn.delay(0.1))
     }
 }

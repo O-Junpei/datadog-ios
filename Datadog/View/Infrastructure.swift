@@ -2,6 +2,10 @@ import SwiftUI
 
 struct InfrastructureView: View {
     var body: some View {
-        Text("EventsView")
+        VStack {
+            Divider()
+            Text("InfrastructureView")
+            Spacer()
+        }
     }
 }
