@@ -16,17 +16,18 @@ struct SideMenu: View {
                 .animation(Animation.easeIn.delay(0.25))
                 .onTapGesture {
                     self.menuClose()
-            }
-            .edgesIgnoringSafeArea([.top, .bottom])
+                }
+                .edgesIgnoringSafeArea([.top, .bottom])
 
             HStack {
                 List {
                     Image("datadog")
                         .resizable()
+                        .frame(width: 140, height: 140)
                         .aspectRatio(contentMode: .fit)
-                    
+
                     Button (action: {
-                        self.router.enumnum = .events
+                        self.router.category = .events
                         self.menuClose()
                     }) {
                         Text("Events")
@@ -34,7 +35,7 @@ struct SideMenu: View {
                     }
 
                     Button (action: {
-                        self.router.enumnum = .monitors
+                        self.router.category = .monitors
                         self.menuClose()
                     }) {
                         Text("Monitors")
@@ -42,7 +43,7 @@ struct SideMenu: View {
                     }
 
                     Button (action: {
-                        self.router.enumnum = .infrastructure
+                        self.router.category = .infrastructure
                         self.menuClose()
                     }) {
                         Text("Infrastructure")
@@ -50,7 +51,7 @@ struct SideMenu: View {
                     }
 
                     Button (action: {
-                        self.router.enumnum = .metrics
+                        self.router.category = .metrics
                         self.menuClose()
                     }) {
                         Text("Metrics Exploer")
@@ -58,7 +59,7 @@ struct SideMenu: View {
                     }
 
                     Button (action: {
-                        self.router.enumnum = .dashboards
+                        self.router.category = .dashboards
                         self.menuClose()
                     }) {
                         Text("Dashboards")
@@ -80,7 +81,7 @@ struct SideMenu: View {
 
                 Spacer()
             }
-            .edgesIgnoringSafeArea([.bottom])
+                .edgesIgnoringSafeArea([.bottom])
         }
     }
 }
@@ -93,20 +94,20 @@ struct ContentView: View {
 
             NavigationView {
                 ZStack {
-                    if router.enumnum == .events {
+                    if router.category == .events {
                         EventsView()
                             .navigationBarTitle("Events")
-                    } else if router.enumnum == .monitors {
+                    } else if router.category == .monitors {
                         MonitersView()
                             .navigationBarTitle("Monitors")
-                    } else if router.enumnum == .infrastructure {
+                    } else if router.category == .infrastructure {
                         InfrastructureView()
                             .navigationBarTitle("InfrastructureView")
-                    } else if router.enumnum == .metrics {
+                    } else if router.category == .metrics {
                         MetricsView()
                             .navigationBarTitle("Metrics")
                     }
-                    else if router.enumnum == .dashboards {
+                    else if router.category == .dashboards {
                         DashboardsView()
                             .navigationBarTitle("DashboardsView")
                     }
@@ -120,13 +121,13 @@ struct ContentView: View {
                     Button(action: {
                         self.openMenu()
                     }, label: {
-                        Image("menu")
+                            Image("menu")
                                 .frame(width: 80, height: 80)
                                 .foregroundColor(Color.white)
                         })
                         .background(Color("mainPurple"))
                         .cornerRadius(40)
-                        .padding()
+                        .padding(16)
                         .shadow(color: Color.black.opacity(0.3),
                             radius: 4, x: 4, y: 4)
                 }

@@ -11,8 +11,7 @@ fileprivate struct InputTextField: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(label)
-                .font(.headline)
-                .foregroundColor(Color.white)
+                .foregroundColor(Color("mainPurple"))
 
             if secureTextField {
                 SecureField(placeholder, text: $stateBinding)
@@ -34,47 +33,37 @@ struct LoginView: View {
     @State private var password: String = ""
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Spacer()
+        VStack {
+            Image("datadog")
+                .resizable()
+                .frame(width: 140, height: 140)
+                .aspectRatio(
+                    CGSize(width: 400, height: 400), contentMode: .fit)
+                .padding(.top, 100)
+                .padding(.bottom, 20)
 
-            HStack {
+            InputTextField(stateBinding: $username, label: "APP Key", placeholder: "Input your APP Key", secureTextField: false)
+                .padding(.bottom, 20)
+
+            InputTextField(stateBinding: $password, label: "API Key", placeholder: "Input your API Key", secureTextField: true)
+                .padding(.bottom, 20)
+
+            Button(action: {
+                print("\(self.username), \(self.password)")
+                self.router.isLogin = true
+            }) {
                 Spacer()
-                Image("datadog")
-                    .resizable()
-                    .frame(width: 140, height: 140)
-                    .aspectRatio(
-                        CGSize(width: 400, height: 400), contentMode: .fit)
-                Spacer()
-            }
-
-            InputTextField(stateBinding: $username, label: "UserName", placeholder: "user name", secureTextField: false)
-
-            InputTextField(stateBinding: $password, label: "Password", placeholder: "password", secureTextField: true)
-
-            HStack {
-                Spacer()
-                Button(action: {
-                    print("\(self.username), \(self.password)")
-                    self.router.isLogin = true
-                }) {
-                    Text("Login")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                }
-                // .disabled(true)
-                // TODO: 両方の TextField が空の場合は
-                
+                Text("Login")
+                    .font(.headline)
+                    .foregroundColor(.white)
                 Spacer()
             }
-                .padding(.vertical, 10)
-                .background(Color.red)
-                .padding(.horizontal, 40)
-
-
+                .padding(.vertical, 12)
+                .background(Color("mainPurple"))
+                .padding(.horizontal, 36)
             Spacer()
         }
             .padding(.horizontal)
-            .background(Image("sea"))
             .edgesIgnoringSafeArea([.top, .bottom])
     }
 }
