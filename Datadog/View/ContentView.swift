@@ -21,6 +21,10 @@ struct SideMenu: View {
 
             HStack {
                 List {
+                    Image("datadog")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    
                     Button (action: {
                         self.router.enumnum = .events
                         self.menuClose()
@@ -116,19 +120,15 @@ struct ContentView: View {
                     Button(action: {
                         self.openMenu()
                     }, label: {
-                            Text("+")
-                                .font(.system(.largeTitle))
-                                .frame(width: 77, height: 70)
+                        Image("menu")
+                                .frame(width: 80, height: 80)
                                 .foregroundColor(Color.white)
-                                .padding(.bottom, 7)
                         })
                         .background(Color("mainPurple"))
-                        .cornerRadius(38.5)
+                        .cornerRadius(40)
                         .padding()
                         .shadow(color: Color.black.opacity(0.3),
-                            radius: 3,
-                            x: 3,
-                            y: 3)
+                            radius: 4, x: 4, y: 4)
                 }
             }
 
