@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1716F4432359BBF3005721FE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1716F4422359BBF3005721FE /* Event.swift */; };
+		1716F4462359BC8F005721FE /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1716F4452359BC8F005721FE /* EventsModel.swift */; };
+		1716F4482359C8D6005721FE /* EventsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1716F4472359C8D6005721FE /* EventsResponse.swift */; };
 		8D3A92A32351A37A00185500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3A92A22351A37A00185500 /* AppDelegate.swift */; };
 		8D3A92A52351A37A00185500 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3A92A42351A37A00185500 /* SceneDelegate.swift */; };
 		8D3A92A72351A37A00185500 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3A92A62351A37A00185500 /* ContentView.swift */; };
@@ -22,9 +25,15 @@
 		8D6BE13A235628590074E3D7 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6BE139235628590074E3D7 /* Metrics.swift */; };
 		8D6BE13C2358A4430074E3D7 /* DashboardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6BE13B2358A4430074E3D7 /* DashboardsView.swift */; };
 		8DA1837423523DD70075A36D /* EnviromentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA1837323523DD70075A36D /* EnviromentRouter.swift */; };
+		E84EB17F12724A8587739DA3 /* Pods_Datadog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263BD9814AA26251837E76A6 /* Pods_Datadog.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1716F4422359BBF3005721FE /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		1716F4452359BC8F005721FE /* EventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
+		1716F4472359C8D6005721FE /* EventsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsResponse.swift; sourceTree = "<group>"; };
+		263BD9814AA26251837E76A6 /* Pods_Datadog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Datadog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FAD9B01BCD6F9955E71E0A5 /* Pods-Datadog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Datadog.release.xcconfig"; path = "Target Support Files/Pods-Datadog/Pods-Datadog.release.xcconfig"; sourceTree = "<group>"; };
 		8D3A929F2351A37A00185500 /* Datadog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Datadog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D3A92A22351A37A00185500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D3A92A42351A37A00185500 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +51,7 @@
 		8D6BE139235628590074E3D7 /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		8D6BE13B2358A4430074E3D7 /* DashboardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardsView.swift; sourceTree = "<group>"; };
 		8DA1837323523DD70075A36D /* EnviromentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviromentRouter.swift; sourceTree = "<group>"; };
+		BFC7896D363B0CA757655B4E /* Pods-Datadog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Datadog.debug.xcconfig"; path = "Target Support Files/Pods-Datadog/Pods-Datadog.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,17 +59,54 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E84EB17F12724A8587739DA3 /* Pods_Datadog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1716F4412359BBE1005721FE /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				1716F4422359BBF3005721FE /* Event.swift */,
+				1716F4472359C8D6005721FE /* EventsResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		1716F4442359BC71005721FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1716F4452359BC8F005721FE /* EventsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F88D867480084F3B11712C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				263BD9814AA26251837E76A6 /* Pods_Datadog.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		87F42A4573A262AE58DDA532 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BFC7896D363B0CA757655B4E /* Pods-Datadog.debug.xcconfig */,
+				3FAD9B01BCD6F9955E71E0A5 /* Pods-Datadog.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8D3A92962351A37900185500 = {
 			isa = PBXGroup;
 			children = (
 				8D3A92A12351A37A00185500 /* Datadog */,
 				8D3A92A02351A37A00185500 /* Products */,
+				87F42A4573A262AE58DDA532 /* Pods */,
+				5F88D867480084F3B11712C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +126,8 @@
 				8DA1837323523DD70075A36D /* EnviromentRouter.swift */,
 				8D6BE1312356249D0074E3D7 /* Category.swift */,
 				8D6BE1272355FF2D0074E3D7 /* View */,
+				1716F4442359BC71005721FE /* Model */,
+				1716F4412359BBE1005721FE /* Entity */,
 				8D3A92A82351A37A00185500 /* Assets.xcassets */,
 				8D3A92AD2351A37A00185500 /* LaunchScreen.storyboard */,
 				8D3A92B02351A37A00185500 /* Info.plist */,
@@ -117,9 +166,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D3A92B32351A37A00185500 /* Build configuration list for PBXNativeTarget "Datadog" */;
 			buildPhases = (
+				245EF37FE7BF5298A644A1C9 /* [CP] Check Pods Manifest.lock */,
 				8D3A929B2351A37A00185500 /* Sources */,
 				8D3A929C2351A37A00185500 /* Frameworks */,
 				8D3A929D2351A37A00185500 /* Resources */,
+				24E181476B947B4E38DA5F91 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -176,6 +227,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		245EF37FE7BF5298A644A1C9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Datadog-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		24E181476B947B4E38DA5F91 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Datadog/Pods-Datadog-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Datadog/Pods-Datadog-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Datadog/Pods-Datadog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8D3A929B2351A37A00185500 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -183,6 +276,8 @@
 			files = (
 				8D6BE136235627E20074E3D7 /* MonitersView.swift in Sources */,
 				8D6BE13C2358A4430074E3D7 /* DashboardsView.swift in Sources */,
+				1716F4462359BC8F005721FE /* EventsModel.swift in Sources */,
+				1716F4482359C8D6005721FE /* EventsResponse.swift in Sources */,
 				8D6BE12D2356007C0074E3D7 /* LoginView.swift in Sources */,
 				8D6BE13A235628590074E3D7 /* Metrics.swift in Sources */,
 				8D3A92A32351A37A00185500 /* AppDelegate.swift in Sources */,
@@ -193,6 +288,7 @@
 				8D3A92A72351A37A00185500 /* ContentView.swift in Sources */,
 				8D6BE1292355FF510074E3D7 /* RootView.swift in Sources */,
 				8D6BE1322356249D0074E3D7 /* Category.swift in Sources */,
+				1716F4432359BBF3005721FE /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +422,7 @@
 		};
 		8D3A92B42351A37A00185500 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFC7896D363B0CA757655B4E /* Pods-Datadog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -346,6 +443,7 @@
 		};
 		8D3A92B52351A37A00185500 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FAD9B01BCD6F9955E71E0A5 /* Pods-Datadog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

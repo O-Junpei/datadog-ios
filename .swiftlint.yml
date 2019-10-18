@@ -1,0 +1,28 @@
+disabled_rules:
+  - force_try
+  - compiler_protocol_init
+  - control_statement
+  - cyclomatic_complexity
+  - file_length
+  - identifier_name
+  - shorthand_operator
+  - force_cast
+  - function_parameter_count
+  - statement_position
+  - syntactic_sugar
+  - type_name
+  - function_body_length
+  - type_body_length
+  - unneeded_break_in_switch
+  - nesting
+  - todo
+excluded:
+  - Pods
+
+type_body_length:
+  - 600 # warning
+  - 800 # error
+
+line_length:
+  - 300
+  - 400
