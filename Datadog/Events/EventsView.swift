@@ -9,6 +9,19 @@ struct EventCell {
     }
 }
 
+
+struct EventsCell: View {
+    let event: Event
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(event.title ?? "No Title")
+            Text(event.alert_type ?? "No AlertType")
+            Text(event.source ?? "No Source")
+            Text(event.text ?? "No Text")
+        }
+    }
+}
+
 struct EventsView: View {
     @ObservedObject(initialValue: EventsViewModel()) var model: EventsViewModel
 
@@ -16,11 +29,8 @@ struct EventsView: View {
         VStack {
             Divider()
             List (model.events) { event in
-                VStack(alignment: .leading) {
-                    Text(event?.title ?? "No Title")
-                    Text(event?.alert_type ?? "No AlertType")
-                    Text(event?.source ?? "No Source")
-                    Text(event?.text ?? "No Text")
+                NavigationLink (destination: EventDetailView(event: event)) {
+                    EventsCell(event: event)
                 }
             }
                 .edgesIgnoringSafeArea([.bottom])

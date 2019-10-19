@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1716F4432359BBF3005721FE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1716F4422359BBF3005721FE /* Event.swift */; };
-		1716F4462359BC8F005721FE /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1716F4452359BC8F005721FE /* EventsModel.swift */; };
+		1716F4462359BC8F005721FE /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1716F4452359BC8F005721FE /* EventsViewModel.swift */; };
 		1716F4482359C8D6005721FE /* EventsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1716F4472359C8D6005721FE /* EventsResponse.swift */; };
 		8D3A92A32351A37A00185500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3A92A22351A37A00185500 /* AppDelegate.swift */; };
 		8D3A92A52351A37A00185500 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3A92A42351A37A00185500 /* SceneDelegate.swift */; };
@@ -26,13 +26,15 @@
 		8D6BE13C2358A4430074E3D7 /* DashboardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6BE13B2358A4430074E3D7 /* DashboardsView.swift */; };
 		8D6BE140235B6AFC0074E3D7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6BE13F235B6AFC0074E3D7 /* LoginViewModel.swift */; };
 		8D6BE145235B72BE0074E3D7 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6BE144235B72BE0074E3D7 /* LoginModel.swift */; };
+		8D6BE147235B73E60074E3D7 /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6BE146235B73E60074E3D7 /* EventsModel.swift */; };
+		8D6BE14E235B78FB0074E3D7 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6BE14D235B78FB0074E3D7 /* EventDetailView.swift */; };
 		8DA1837423523DD70075A36D /* EnviromentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA1837323523DD70075A36D /* EnviromentRouter.swift */; };
 		E84EB17F12724A8587739DA3 /* Pods_Datadog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263BD9814AA26251837E76A6 /* Pods_Datadog.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1716F4422359BBF3005721FE /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		1716F4452359BC8F005721FE /* EventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
+		1716F4452359BC8F005721FE /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
 		1716F4472359C8D6005721FE /* EventsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsResponse.swift; sourceTree = "<group>"; };
 		263BD9814AA26251837E76A6 /* Pods_Datadog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Datadog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FAD9B01BCD6F9955E71E0A5 /* Pods-Datadog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Datadog.release.xcconfig"; path = "Target Support Files/Pods-Datadog/Pods-Datadog.release.xcconfig"; sourceTree = "<group>"; };
@@ -54,6 +56,8 @@
 		8D6BE13B2358A4430074E3D7 /* DashboardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardsView.swift; sourceTree = "<group>"; };
 		8D6BE13F235B6AFC0074E3D7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8D6BE144235B72BE0074E3D7 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		8D6BE146235B73E60074E3D7 /* EventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
+		8D6BE14D235B78FB0074E3D7 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 		8DA1837323523DD70075A36D /* EnviromentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviromentRouter.swift; sourceTree = "<group>"; };
 		BFC7896D363B0CA757655B4E /* Pods-Datadog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Datadog.debug.xcconfig"; path = "Target Support Files/Pods-Datadog/Pods-Datadog.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,10 +125,15 @@
 				8D3A92A42351A37A00185500 /* SceneDelegate.swift */,
 				8DA1837323523DD70075A36D /* EnviromentRouter.swift */,
 				8D6BE1312356249D0074E3D7 /* Category.swift */,
+				8D6BE1282355FF510074E3D7 /* RootView.swift */,
+				8D3A92A62351A37A00185500 /* ContentView.swift */,
 				1716F4412359BBE1005721FE /* Entity */,
 				8D6BE13E235B6ACE0074E3D7 /* Login */,
 				8D6BE141235B6B440074E3D7 /* Events */,
-				8D6BE1272355FF2D0074E3D7 /* View */,
+				8D6BE149235B77C50074E3D7 /* Moniters */,
+				8D6BE14A235B77DB0074E3D7 /* Infrastructure */,
+				8D6BE14B235B77E80074E3D7 /* Metrics */,
+				8D6BE14C235B77F20074E3D7 /* Dashboards */,
 				8D3A92A82351A37A00185500 /* Assets.xcassets */,
 				8D3A92AD2351A37A00185500 /* LaunchScreen.storyboard */,
 				8D3A92B02351A37A00185500 /* Info.plist */,
@@ -141,19 +150,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		8D6BE1272355FF2D0074E3D7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				8D3A92A62351A37A00185500 /* ContentView.swift */,
-				8D6BE1282355FF510074E3D7 /* RootView.swift */,
-				8D6BE135235627E20074E3D7 /* MonitersView.swift */,
-				8D6BE137235628390074E3D7 /* Infrastructure.swift */,
-				8D6BE139235628590074E3D7 /* Metrics.swift */,
-				8D6BE13B2358A4430074E3D7 /* DashboardsView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		8D6BE13E235B6ACE0074E3D7 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,9 +164,51 @@
 			isa = PBXGroup;
 			children = (
 				8D6BE133235627980074E3D7 /* EventsView.swift */,
-				1716F4452359BC8F005721FE /* EventsModel.swift */,
+				1716F4452359BC8F005721FE /* EventsViewModel.swift */,
+				8D6BE146235B73E60074E3D7 /* EventsModel.swift */,
+				8D6BE14F235B794D0074E3D7 /* EventDetail */,
 			);
 			path = Events;
+			sourceTree = "<group>";
+		};
+		8D6BE149235B77C50074E3D7 /* Moniters */ = {
+			isa = PBXGroup;
+			children = (
+				8D6BE135235627E20074E3D7 /* MonitersView.swift */,
+			);
+			path = Moniters;
+			sourceTree = "<group>";
+		};
+		8D6BE14A235B77DB0074E3D7 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				8D6BE137235628390074E3D7 /* Infrastructure.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		8D6BE14B235B77E80074E3D7 /* Metrics */ = {
+			isa = PBXGroup;
+			children = (
+				8D6BE139235628590074E3D7 /* Metrics.swift */,
+			);
+			path = Metrics;
+			sourceTree = "<group>";
+		};
+		8D6BE14C235B77F20074E3D7 /* Dashboards */ = {
+			isa = PBXGroup;
+			children = (
+				8D6BE13B2358A4430074E3D7 /* DashboardsView.swift */,
+			);
+			path = Dashboards;
+			sourceTree = "<group>";
+		};
+		8D6BE14F235B794D0074E3D7 /* EventDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8D6BE14D235B78FB0074E3D7 /* EventDetailView.swift */,
+			);
+			path = EventDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,14 +328,16 @@
 			files = (
 				8D6BE136235627E20074E3D7 /* MonitersView.swift in Sources */,
 				8D6BE13C2358A4430074E3D7 /* DashboardsView.swift in Sources */,
-				1716F4462359BC8F005721FE /* EventsModel.swift in Sources */,
+				1716F4462359BC8F005721FE /* EventsViewModel.swift in Sources */,
 				1716F4482359C8D6005721FE /* EventsResponse.swift in Sources */,
+				8D6BE147235B73E60074E3D7 /* EventsModel.swift in Sources */,
 				8D6BE140235B6AFC0074E3D7 /* LoginViewModel.swift in Sources */,
 				8D6BE12D2356007C0074E3D7 /* LoginView.swift in Sources */,
 				8D6BE13A235628590074E3D7 /* Metrics.swift in Sources */,
 				8D3A92A32351A37A00185500 /* AppDelegate.swift in Sources */,
 				8D6BE145235B72BE0074E3D7 /* LoginModel.swift in Sources */,
 				8D3A92A52351A37A00185500 /* SceneDelegate.swift in Sources */,
+				8D6BE14E235B78FB0074E3D7 /* EventDetailView.swift in Sources */,
 				8D6BE134235627980074E3D7 /* EventsView.swift in Sources */,
 				8DA1837423523DD70075A36D /* EnviromentRouter.swift in Sources */,
 				8D6BE138235628390074E3D7 /* Infrastructure.swift in Sources */,
