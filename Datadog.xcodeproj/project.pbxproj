@@ -24,6 +24,8 @@
 		8D6BE138235628390074E3D7 /* Infrastructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6BE137235628390074E3D7 /* Infrastructure.swift */; };
 		8D6BE13A235628590074E3D7 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6BE139235628590074E3D7 /* Metrics.swift */; };
 		8D6BE13C2358A4430074E3D7 /* DashboardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6BE13B2358A4430074E3D7 /* DashboardsView.swift */; };
+		8D6BE140235B6AFC0074E3D7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6BE13F235B6AFC0074E3D7 /* LoginViewModel.swift */; };
+		8D6BE145235B72BE0074E3D7 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6BE144235B72BE0074E3D7 /* LoginModel.swift */; };
 		8DA1837423523DD70075A36D /* EnviromentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA1837323523DD70075A36D /* EnviromentRouter.swift */; };
 		E84EB17F12724A8587739DA3 /* Pods_Datadog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263BD9814AA26251837E76A6 /* Pods_Datadog.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +52,8 @@
 		8D6BE137235628390074E3D7 /* Infrastructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Infrastructure.swift; sourceTree = "<group>"; };
 		8D6BE139235628590074E3D7 /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		8D6BE13B2358A4430074E3D7 /* DashboardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardsView.swift; sourceTree = "<group>"; };
+		8D6BE13F235B6AFC0074E3D7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		8D6BE144235B72BE0074E3D7 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		8DA1837323523DD70075A36D /* EnviromentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviromentRouter.swift; sourceTree = "<group>"; };
 		BFC7896D363B0CA757655B4E /* Pods-Datadog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Datadog.debug.xcconfig"; path = "Target Support Files/Pods-Datadog/Pods-Datadog.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,14 +77,6 @@
 				1716F4472359C8D6005721FE /* EventsResponse.swift */,
 			);
 			path = Entity;
-			sourceTree = "<group>";
-		};
-		1716F4442359BC71005721FE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				1716F4452359BC8F005721FE /* EventsModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		5F88D867480084F3B11712C8 /* Frameworks */ = {
@@ -125,9 +121,10 @@
 				8D3A92A42351A37A00185500 /* SceneDelegate.swift */,
 				8DA1837323523DD70075A36D /* EnviromentRouter.swift */,
 				8D6BE1312356249D0074E3D7 /* Category.swift */,
-				8D6BE1272355FF2D0074E3D7 /* View */,
-				1716F4442359BC71005721FE /* Model */,
 				1716F4412359BBE1005721FE /* Entity */,
+				8D6BE13E235B6ACE0074E3D7 /* Login */,
+				8D6BE141235B6B440074E3D7 /* Events */,
+				8D6BE1272355FF2D0074E3D7 /* View */,
 				8D3A92A82351A37A00185500 /* Assets.xcassets */,
 				8D3A92AD2351A37A00185500 /* LaunchScreen.storyboard */,
 				8D3A92B02351A37A00185500 /* Info.plist */,
@@ -149,14 +146,31 @@
 			children = (
 				8D3A92A62351A37A00185500 /* ContentView.swift */,
 				8D6BE1282355FF510074E3D7 /* RootView.swift */,
-				8D6BE12C2356007C0074E3D7 /* LoginView.swift */,
-				8D6BE133235627980074E3D7 /* EventsView.swift */,
 				8D6BE135235627E20074E3D7 /* MonitersView.swift */,
 				8D6BE137235628390074E3D7 /* Infrastructure.swift */,
 				8D6BE139235628590074E3D7 /* Metrics.swift */,
 				8D6BE13B2358A4430074E3D7 /* DashboardsView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8D6BE13E235B6ACE0074E3D7 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8D6BE12C2356007C0074E3D7 /* LoginView.swift */,
+				8D6BE13F235B6AFC0074E3D7 /* LoginViewModel.swift */,
+				8D6BE144235B72BE0074E3D7 /* LoginModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		8D6BE141235B6B440074E3D7 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				8D6BE133235627980074E3D7 /* EventsView.swift */,
+				1716F4452359BC8F005721FE /* EventsModel.swift */,
+			);
+			path = Events;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,9 +292,11 @@
 				8D6BE13C2358A4430074E3D7 /* DashboardsView.swift in Sources */,
 				1716F4462359BC8F005721FE /* EventsModel.swift in Sources */,
 				1716F4482359C8D6005721FE /* EventsResponse.swift in Sources */,
+				8D6BE140235B6AFC0074E3D7 /* LoginViewModel.swift in Sources */,
 				8D6BE12D2356007C0074E3D7 /* LoginView.swift in Sources */,
 				8D6BE13A235628590074E3D7 /* Metrics.swift in Sources */,
 				8D3A92A32351A37A00185500 /* AppDelegate.swift in Sources */,
+				8D6BE145235B72BE0074E3D7 /* LoginModel.swift in Sources */,
 				8D3A92A52351A37A00185500 /* SceneDelegate.swift in Sources */,
 				8D6BE134235627980074E3D7 /* EventsView.swift in Sources */,
 				8DA1837423523DD70075A36D /* EnviromentRouter.swift in Sources */,
@@ -434,7 +450,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiswiswift.datadog.Datadog;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiswiswift.datadog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -455,7 +472,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiswiswift.datadog.Datadog;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiswiswift.datadog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -9,14 +9,8 @@ struct EventCell {
     }
 }
 
-struct EventsView: View {        
-    
-    @ObservedObject(initialValue: EventsModel()) var model: EventsModel
-
-    
-    init() {
-        self.model.featchEvents(limit: 10)
-    }
+struct EventsView: View {
+    @ObservedObject(initialValue: EventsViewModel()) var model: EventsViewModel
 
     var body: some View {
         VStack {
