@@ -1,26 +1,24 @@
 import SwiftUI
 
-struct EventCell {
-    var body: some View {
-        VStack {
-            Text("sssss")
-            Text("sssss")
-        }
-    }
-}
-
-
 struct EventsCell: View {
     let event: Event
     var body: some View {
         VStack(alignment: .leading) {
             Text(event.title ?? "No Title")
+                .lineLimit(1)
+                .font(.headline)
             Text(event.alert_type ?? "No AlertType")
-            Text(event.source ?? "No Source")
-            Text(event.text ?? "No Text")
+                .padding(2)
+                .foregroundColor(Color.white)
+                .background(Color.green)
+            Text("Date: \(event.date)")
+            Text("Source: \(event.source ?? "No Source")")
+            Text("Text: \(event.text ?? "No Text")")
+                .lineLimit(2)
         }
     }
 }
+
 
 struct EventsView: View {
     @ObservedObject(initialValue: EventsViewModel()) var model: EventsViewModel

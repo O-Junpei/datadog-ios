@@ -24,11 +24,12 @@ class EventsModel {
 
         AF.request("https://api.datadoghq.com/api/v1/events", parameters: parameters, encoder: URLEncodedFormParameterEncoder.default).responseJSON { response in
             switch response.result {
-            case .success:
+                            case .success:
                 guard let data = response.data else {
                     completion(nil, nil)
                     return
                 }
+                debugPrint(response)
                 guard let eventsResponse = try? JSONDecoder().decode(EventsResponse.self, from: data) else {
                     completion(nil, nil)
                     return
