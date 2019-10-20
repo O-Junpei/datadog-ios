@@ -16,28 +16,31 @@ struct Event: Identifiable, Codable {
     let title: String?
     let text: String?
     let url: String?
-    
+
     var date: String {
-        guard let timestamp = date_happened  else {
+        guard let timestamp = date_happened else {
             return "No Date"
         }
-        
+
         let dateUnix: TimeInterval = TimeInterval(timestamp)
         let date = NSDate(timeIntervalSince1970: dateUnix)
         return date.description
     }
-    
+
     var alertTypeColor: Color {
         guard let alertType = alert_type else {
             return Color.black
         }
-        
-        if alertType == "Success" {
-            
-        }else if alertType == "Success" {
-            
+
+        if alertType == "success" {
+            return Color("alertTypeSuccess")
+        } else if alertType == "info" {
+            return Color("alertTypeInfo")
+        } else if alertType == "error" {
+            return Color("alertTypeError")
+        } else {
+            return Color.black
         }
-        
     }
 }
 

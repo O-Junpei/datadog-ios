@@ -10,7 +10,7 @@ struct EventsCell: View {
             Text(event.alert_type ?? "No AlertType")
                 .padding(2)
                 .foregroundColor(Color.white)
-                .background(Color.green)
+                .background(event.alertTypeColor)
             Text("Date: \(event.date)")
             Text("Source: \(event.source ?? "No Source")")
             Text("Text: \(event.text ?? "No Text")")

@@ -29,3 +29,5 @@ bundle _2.0.1_ install --path vendor/bundle
 ## TODO アプリの設定画面などにも追加
 - https://github.com/snakajima/SNDraw
 - http://icooon-mono.com/
+
+- https://www.datadoghq.com/about/press/resources/

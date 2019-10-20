@@ -37,10 +37,10 @@ struct LoginView: View {
                 .padding(.top, 100)
                 .padding(.bottom, 20)
 
-            InputTextField(stateBinding: $viewModel.apiKey, label: "APP Key", placeholder: "Input your APP Key", secureTextField: false)
+            InputTextField(stateBinding: $viewModel.apiKey, label: "APP Key", placeholder: "Input your APP Key", secureTextField: true)
                 .padding(.bottom, 20)
 
-            InputTextField(stateBinding: $viewModel.applicationKey, label: "API Key", placeholder: "Input your API Key", secureTextField: false)
+            InputTextField(stateBinding: $viewModel.applicationKey, label: "API Key", placeholder: "Input your API Key", secureTextField: true)
                 .padding(.bottom, 20)
 
             Button(action: {
