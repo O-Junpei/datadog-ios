@@ -27,7 +27,8 @@ struct EventsView: View {
         VStack {
             Divider()
             List (model.events) { event in
-                NavigationLink (destination: EventDetailView(event: event)) {
+                NavigationLink (destination: EventDetailView(event: event)
+                ) {
                     EventsCell(event: event)
                 }
             }

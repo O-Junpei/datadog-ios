@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (5.0.0-rc.2)
   - KeychainAccess (3.2.0)
+  - LicensePlist (2.8.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.2)
   - KeychainAccess
+  - LicensePlist
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - KeychainAccess
+    - LicensePlist
 
 SPEC CHECKSUMS:
   Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
   KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
+  LicensePlist: 9753bef02d88487a902959033dd0d19055996808
 
-PODFILE CHECKSUM: d7e97d1e92f5a34a52384e2ea60c1b0dc3c87910
+PODFILE CHECKSUM: 7c688756c310c701bc309ab619872328b02b9e96
 
 COCOAPODS: 1.8.0

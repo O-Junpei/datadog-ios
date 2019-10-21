@@ -37,14 +37,14 @@ struct LoginView: View {
                 .padding(.top, 100)
                 .padding(.bottom, 20)
 
-            InputTextField(stateBinding: $viewModel.apiKey, label: "APP Key", placeholder: "Input your APP Key", secureTextField: true)
+            InputTextField(stateBinding: $viewModel.apiKey, label: "API Key", placeholder: "Input your API Key", secureTextField: true)
                 .padding(.bottom, 20)
 
-            InputTextField(stateBinding: $viewModel.applicationKey, label: "API Key", placeholder: "Input your API Key", secureTextField: true)
+            InputTextField(stateBinding: $viewModel.applicationKey, label: "APP Key", placeholder: "Input your APP Key", secureTextField: true)
                 .padding(.bottom, 20)
 
             Button(action: {
-                print("\(self.viewModel.apiKey), \(self.viewModel.applicationKey)")
+                self.viewModel.storeApiKeyAndApplicationKey()
                 self.router.isLogin = true
             }) {
                 Spacer()
@@ -53,7 +53,7 @@ struct LoginView: View {
                     .foregroundColor(.white)
                 Spacer()
             }
-                .padding(.vertical, 12)
+            .padding(.vertical, 12)
                 .background(Color("mainPurple"))
                 .padding(.horizontal, 36)
             Spacer()

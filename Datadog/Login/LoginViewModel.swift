@@ -2,6 +2,7 @@ import Foundation
 import KeychainAccess
 
 class LoginViewModel: ObservableObject {
+    private let model = LoginModel()
     @Published var apiKey: String
     @Published var applicationKey: String
 
@@ -11,5 +12,9 @@ class LoginViewModel: ObservableObject {
         let applicationKey = keychain["application_key"]
         self.apiKey = apiKey ?? ""
         self.applicationKey = applicationKey ?? ""
+    }
+    
+    func storeApiKeyAndApplicationKey() {
+        model.storeApiKeyAndApplicationKey(apiKey: apiKey, applicationKey: applicationKey)
     }
 }

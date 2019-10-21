@@ -29,7 +29,6 @@ class EventsModel {
                     completion(nil, nil)
                     return
                 }
-                debugPrint(response)
                 guard let eventsResponse = try? JSONDecoder().decode(EventsResponse.self, from: data) else {
                     completion(nil, nil)
                     return
